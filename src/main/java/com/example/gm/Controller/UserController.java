@@ -22,9 +22,10 @@ public class UserController {
 	Repo repo;
 
 	@RequestMapping("/")
-	public String home() {
-
-		return "home.jsp";
+	public ModelAndView home() {
+		ModelAndView mv = new ModelAndView("home.jsp");
+		
+		return mv;
 	}
 
 	@RequestMapping("/add")
