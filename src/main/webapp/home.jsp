@@ -12,6 +12,7 @@
    <input type="password" name="password" placeholder="sifre"><br>
    <input type="submit"><br>
    <code>please enter details</code>
+    <code>${uid}</code>
    </form>
 </body>
 </html>

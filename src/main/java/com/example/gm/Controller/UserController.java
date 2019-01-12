@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.gm.model.User;
 import com.example.gm.repo.Repo;
@@ -35,5 +37,14 @@ public class UserController {
 	public Iterable<User> API_URL_PROD() {
 		System.out.println(repo.findAll().toString());
 		return repo.findAll();
+	}
+	
+	@RequestMapping("/web")
+	public ModelAndView getweb(@RequestParam int uid) {
+		ModelAndView mv = new ModelAndView("home.jsp");
+		mv.addObject("uid",uid);
+		
+		return mv;
+		
 	}
 }
